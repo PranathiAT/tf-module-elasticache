@@ -34,18 +34,6 @@ resource "aws_elasticache_parameter_group" "main" {
 
 }
 
-#resource "aws_elasticache_cluster" "main" {
-#  cluster_id           = "${var.name}-${var.env}-elasticache"
-#  engine               = "redis"
-#  node_type            = var.node_type
-#  num_cache_nodes      = var.num_cache_nodes
-#  parameter_group_name = aws_elasticache_parameter_group.main.name
-#  engine_version       = var.engine_version
-#  port                 = 6379
-#  subnet_group_name    = aws_elasticache_subnet_group.main.name
-#  security_group_ids   = [aws_security_group.sg.id]
-#
-#}
 
 resource "aws_elasticache_replication_group" "main" {
   replication_group_id       = "${var.name}-${var.env}-elasticache"
